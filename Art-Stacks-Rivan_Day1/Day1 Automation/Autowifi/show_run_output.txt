@@ -1,0 +1,29 @@
+configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+aironet-12(config)#hostname aironet-12
+aironet-12(config)#dot11 ssid Paul-welcomeToRivan
+aironet-12(config-ssid)#vlan 12
+aironet-12(config-ssid)#authentication open
+aironet-12(config-ssid)#authentication key-management wpa
+aironet-12(config-ssid)#wpa-psk ascii C1sc0123
+aironet-12(config-ssid)#guest-mode
+aironet-12(config-ssid)#default Int Dot11Radio 0
+Cannot disable station-role
+
+Interface Dot11Radio0 set to default configuration
+aironet-12(config)#default interface gigabitEthernet 0
+%command not allowed, cannot remove bridge-group 1
+Interface GigabitEthernet0 set to default configuration
+aironet-12(config)#int dot11radio 0
+aironet-12(config-if)#no shut
+aironet-12(config-if)#channel 6
+aironet-12(config-if)#encryption mode ciphers tkip
+aironet-12(config-if)#encryption vlan 12 mode ciphers tkip
+aironet-12(config-if)#ssid Paul-welcomeToRivan
+aironet-12(config-if)#exit
+aironet-12(config)#interface dot11radio 0.12
+aironet-12(config-subif)#encapsulation dot1q 12 native
+aironet-12(config-subif)#bridge-group 1
+aironet-12(config-subif)#exit
+aironet-12(config)#end
+aironet-12#
